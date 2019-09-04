@@ -8,6 +8,9 @@ public interface HoverEvent {
      * A list of actions that can be performed when the user hovers over the JSON message
      */
     enum Action {
+        /**
+         * Shows a text component
+         */
         SHOW_TEXT,
         SHOW_ITEM,
         SHOW_ENTITY,

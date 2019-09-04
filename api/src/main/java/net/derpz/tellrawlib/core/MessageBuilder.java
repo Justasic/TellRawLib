@@ -1,5 +1,7 @@
 package net.derpz.tellrawlib.core;
 
+import net.derpz.tellrawlib.core.components.MessageComponent;
+
 /**
  * A class to make constructing JSON messages simpler
  */

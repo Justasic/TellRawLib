@@ -31,6 +31,6 @@ public interface ClickEvent {
      * Constructs a new ClickEvent with a hover action
      * @param action An action of your choice.
      */
-    public void construct(Action action);
+    public void construct(Action action, Object event);
 
 }

@@ -1,15 +1,14 @@
-package net.derpz.tellrawlib.core;
+package net.derpz.tellrawlib.core.components;
 
 import net.derpz.tellrawlib.core.enums.Color;
 import net.derpz.tellrawlib.core.enums.Formatting;
-import net.derpz.tellrawlib.core.events.ClickEvent;
-import net.derpz.tellrawlib.core.events.HoverEvent;
+
 
 /**
- * A component of a JSONmessage that you wish to send to the player
- * @author xiurobert
+ * A primitive message component. This is for use in HoverEvent.
+ * It cannot take in a ClickEvent or a HoverEvent
  */
-public interface MessageComponent {
+public interface MessageComponentPrimitive {
     /**
      * Sets the text portion of the message component. Accepts bukkit colour codes prefixed with an & sign
      * You can supply as many color or formatting codes as you want.
@@ -34,17 +33,4 @@ public interface MessageComponent {
      * @param formatting A formatting code of your choice.
      */
     public void addFormatting(Formatting formatting);
-
-    /**
-     * Sets the click event that will be called when the message component is clicked on
-     * @param clickEvent A ClickEvent which will provide action
-     */
-    public void setClickEvent(ClickEvent clickEvent);
-
-    /**
-     * Sets the hover event that will be called when the message component is hovered over
-     * @param hoverEvent A HoverEvent which will provide action
-     */
-    public void setHoverEvent(HoverEvent hoverEvent);
-
 }
