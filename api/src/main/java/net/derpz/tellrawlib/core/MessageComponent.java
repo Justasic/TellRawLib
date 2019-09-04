@@ -28,14 +28,12 @@ public interface MessageComponent {
     public void setColor(Color color);
 
     /**
-     * Sets the formatting of the text portion of the message component
+     * Adds formatting to the text portion of the message component
      * For formatting codes, see {@link net.derpz.tellrawlib.core.enums.Formatting}
      * <b>Note that you can always set the color with bukkit color codes in {@link #setText(String)}</b>
-     * <b>You may only choose one formatting code for the whole MessageComponent.</b>
-     * <p>If you wish to use more formatting codes, please use {@link #setText(String)} instead</p>
      * @param formatting A formatting code of your choice.
      */
-    public void setFormatting(Formatting formatting);
+    public void addFormatting(Formatting formatting);
 
     /**
      * Sets the click event that will be called when the message component is clicked on
