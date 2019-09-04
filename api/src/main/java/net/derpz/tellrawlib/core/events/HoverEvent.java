@@ -22,7 +22,7 @@ public interface HoverEvent {
         SHOW_ENTITY,
         /**
          * Shows an {@link org.bukkit.Achievement}
-         * or an {@link org.bukkit.advancement.Advancement}
+         * @deprecated as of 1.12
          */
         SHOW_ACHIEVEMENT
     }
@@ -33,4 +33,11 @@ public interface HoverEvent {
      * @param value The value that you supply to have the action executed
      */
     public void construct(Action action, Object value);
+
+    /**
+     * Returns the JSON object as a string
+     * @return The JSON string
+     * @apiNote For internal use only
+     */
+    public String getJson();
 }

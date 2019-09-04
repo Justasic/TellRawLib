@@ -32,6 +32,11 @@
             <id>infiniapress-nexus</id>
             <url>https://dev.infiniapress.co/nexus/repository/maven-public/</url>
         </repository>
+
+        <repository>
+            <id>infiniapress-nexus</id>
+            <url>https://dev.infiniapress.co/nexus/repository/spigot-server/</url>
+        </repository>
     </repositories>
 
     <build>

@@ -23,6 +23,7 @@ public interface ClickEvent {
         OPEN_URL,
         /**
          * Change the page of the book, in a written book
+         * @deprecated You really shouldn't be using this. It is a message plugin
          */
         CHANGE_PAGE
     }
@@ -34,4 +35,9 @@ public interface ClickEvent {
      */
     public void construct(Action action, String event);
 
+    /**
+     * Returns the ClickEvent as a JSON string
+     * @return A JSON string containing the click event
+     */
+    public String getJson();
 }

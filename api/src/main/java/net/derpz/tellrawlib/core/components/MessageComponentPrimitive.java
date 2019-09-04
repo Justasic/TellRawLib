@@ -9,7 +9,7 @@ import net.derpz.tellrawlib.core.enums.Formatting;
  * It cannot take in a ClickEvent or a HoverEvent
  */
 public interface MessageComponentPrimitive {
-    // TODO: Remove methods
+    // TODO: Methods to remove the stuff
     /**
      * Sets the text portion of the message component. Accepts bukkit colour codes prefixed with an & sign
      * You can supply as many color or formatting codes as you want.
