@@ -19,8 +19,13 @@
         </dependency>
         <dependency>
             <groupId>net.derpz.tellrawlib</groupId>
-            <artifactId>plugin</artifactId>
+            <artifactId>api</artifactId>
             <version>${pluginVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.5</version>
         </dependency>
     </dependencies>
 

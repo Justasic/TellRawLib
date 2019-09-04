@@ -11,13 +11,6 @@
 
     <artifactId>api</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>net.derpz.tellrawlib</groupId>
-            <artifactId>plugin</artifactId>
-            <version>${pluginVersion}</version>
-        </dependency>
-    </dependencies>
     <build>
         <plugins>
             <plugin>

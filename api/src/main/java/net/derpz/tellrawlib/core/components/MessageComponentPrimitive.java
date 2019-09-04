@@ -9,6 +9,7 @@ import net.derpz.tellrawlib.core.enums.Formatting;
  * It cannot take in a ClickEvent or a HoverEvent
  */
 public interface MessageComponentPrimitive {
+    // TODO: Remove methods
     /**
      * Sets the text portion of the message component. Accepts bukkit colour codes prefixed with an & sign
      * You can supply as many color or formatting codes as you want.
@@ -33,4 +34,18 @@ public interface MessageComponentPrimitive {
      * @param formatting A formatting code of your choice.
      */
     public void addFormatting(Formatting formatting);
+
+    /**
+     * Sets the insertion of the message component.
+     * The text specified in the insertion will be inserted
+     * into the player's chat when they shift-click on the text
+     * @param insertion The text to be inserted in the target's chat
+     */
+    public void setInsertion(String insertion);
+
+    /**
+     * Gets the JSON string from the creation of the MessageComponentPrimitive
+     * @return A JSON string to be sent to the player
+     */
+    public String getJsonString();
 }
