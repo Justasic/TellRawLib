@@ -24,13 +24,14 @@ public interface ClickEvent {
         /**
          * Change the page of the book, in a written book
          */
-        BOOK_CHANGE_PAGE
+        CHANGE_PAGE
     }
 
     /**
      * Constructs a new ClickEvent with a hover action
      * @param action An action of your choice.
+     * @param event A string specifying what the ClickEvent will do
      */
-    public void construct(Action action, Object event);
+    public void construct(Action action, String event);
 
 }
