@@ -1,4 +1,4 @@
-package net.derpz.tellrawlib.util;
+package net.derpz.tellrawlib.core.util;
 
 import org.bukkit.ChatColor;
 

@@ -1,6 +1,5 @@
 package net.derpz.tellrawlib;
 
-import net.derpz.tellrawlib.core.components.MessageComponent;
 import org.bukkit.entity.Player;
 
 public interface NMSJsonPacketMsg {
