@@ -1,6 +1,5 @@
 package net.derpz.tellrawlib.core.components;
 
-import net.derpz.tellrawlib.core.events.ClickEvent;
 import net.derpz.tellrawlib.core.events.HoverEvent;
 
 /**

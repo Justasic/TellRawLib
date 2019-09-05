@@ -1,10 +1,7 @@
-package net.derpz.tellrawlib.impl.components;
+package net.derpz.tellrawlib.core.components;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import net.derpz.tellrawlib.core.components.MessageComponent;
-import net.derpz.tellrawlib.core.events.ClickEvent;
 import net.derpz.tellrawlib.core.events.HoverEvent;
 
 public class MsgComponent extends MsgComponentPrimitive implements MessageComponent {

@@ -1,14 +1,11 @@
-package net.derpz.tellrawlib.impl.components;
+package net.derpz.tellrawlib.core.components;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import net.derpz.tellrawlib.core.components.MessageComponentPrimitive;
 import net.derpz.tellrawlib.core.enums.Color;
 import net.derpz.tellrawlib.core.enums.Formatting;
 
 import net.derpz.tellrawlib.util.ChatUtil;
-
-import java.text.Normalizer;
 
 public class MsgComponentPrimitive implements MessageComponentPrimitive {
     private JsonObject jsonObject;

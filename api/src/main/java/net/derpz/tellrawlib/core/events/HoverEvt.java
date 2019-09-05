@@ -1,13 +1,10 @@
-package net.derpz.tellrawlib.impl.events;
+package net.derpz.tellrawlib.core.events;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.sun.org.apache.bcel.internal.generic.FieldGenOrMethodGen;
-import jdk.nashorn.internal.parser.JSONParser;
-import net.derpz.tellrawlib.core.events.HoverEvent;
-import net.derpz.tellrawlib.impl.components.MsgComponentPrimitive;
+import net.derpz.tellrawlib.core.components.MsgComponentPrimitive;
 import org.bukkit.entity.Entity;
 import org.bukkit.inventory.ItemStack;
 

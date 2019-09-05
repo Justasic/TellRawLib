@@ -21,7 +21,7 @@ public class VersionSupportHandler {
         add("v1_14_R1");
     }};
 
-    /*
+    /**
      * Construct the support handler
      * @param server Server returned from getServer()
      */

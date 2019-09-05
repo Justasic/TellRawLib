@@ -1,9 +1,10 @@
 package net.derpz.tellrawlib.core.events;
 
-/**
- * Represents an action that will be executed when the user clicks on the JSON message
- */
-public interface ClickEvent {
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
+public class ClickEvent {
+
     /**
      * A list of actions that can be performed when the user clicks on the message
      */
@@ -28,16 +29,26 @@ public interface ClickEvent {
         CHANGE_PAGE
     }
 
+    private JsonObject clckEvt;
+
     /**
      * Constructs a new ClickEvent with a hover action
      * @param action An action of your choice.
      * @param event A string specifying what the ClickEvent will do
      */
-    public void construct(Action action, String event);
+
+    public ClickEvent(Action action, String event) {
+        clckEvt = new JsonObject();
+        clckEvt.addProperty("action", action.toString().toLowerCase());
+        clckEvt.addProperty("value", event);
+    }
 
     /**
      * Returns the ClickEvent as a JSON string
      * @return A JSON string containing the click event
      */
-    public String getJson();
+    public String getJson() {
+        return new Gson().toJson(clckEvt);
+    }
+
 }
