@@ -4,9 +4,13 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import net.derpz.tellrawlib.core.ValueException;
 import net.derpz.tellrawlib.core.components.MessageComponentPrimitive;
+import net.derpz.tellrawlib.core.util.ItemStackJsonNbtConverter;
 import org.bukkit.entity.Entity;
 import org.bukkit.inventory.ItemStack;
+
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * Represents an action that will be executed when the user hovers over the JSON message
@@ -43,10 +47,12 @@ public class HoverEvent {
      * Constructs a new HoverEvent with an action and a value
      * @param action The action you would like to execute
      * @param value The value that you supply to have the action executed
+     * @throws ValueException If your value does not correspond with your action
      */
     
-    public HoverEvent(Action action, Object value) {
+    public HoverEvent(Action action, Object value) throws ValueException {
         hoverEvt = new JsonObject();
+
         hoverEvt.addProperty("action", action.toString().toLowerCase());
         if (action == Action.SHOW_TEXT && value instanceof MessageComponentPrimitive) {
             JsonObject val = new JsonObject();
@@ -65,9 +71,10 @@ public class HoverEvent {
 
             hoverEvt.addProperty("value", new Gson().toJson(val));
         } else if (action == Action.SHOW_ITEM && value instanceof ItemStack) {
-            // TODO: Reflection to get NBT into JSON
+            // TODO: Figure out a way to call this when you're actually in the server
+            //hoverEvt.addProperty("value");
         } else {
-            // TODO: Throw a ValueException
+            throw new ValueException("Value is invalid for the type of action you wish to perform");
         }
     }
 
