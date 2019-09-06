@@ -13,13 +13,26 @@ import net.derpz.tellrawlib.core.enums.Formatting;
 public class MessageComponentPrimitive {
     JsonObject jsonObject;
 
+    /**
+     * Constructs a blank primitive message component
+     */
     public MessageComponentPrimitive() {
         this.jsonObject = new JsonObject();
     }
 
     /**
-     * Sets the text portion of the message component. Accepts bukkit colour codes prefixed with an & sign
-     * You can supply as many color or formatting codes as you want.
+     * Constructs a new primitive message component with a text portion.
+     * Accepts bukkit colour codes prefixed with an & sign
+     * @param text The text portion of the message component
+     */
+    public MessageComponentPrimitive(String text) {
+        this.jsonObject = new JsonObject();
+        jsonObject.addProperty("text", ChatUtil.colour(text));
+    }
+
+    /**
+     * Sets the text portion of the message component.
+     * Accepts bukkit colour codes prefixed with an & sign
      * @param text The text portion of the message component
      */
     public void setText(String text) {

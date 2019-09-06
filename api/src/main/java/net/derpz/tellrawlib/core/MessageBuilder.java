@@ -2,18 +2,24 @@ package net.derpz.tellrawlib.core;
 
 import net.derpz.tellrawlib.core.components.MessageComponent;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A class to make constructing JSON messages simpler
  */
 public class MessageBuilder {
+
+    private List<MessageComponent> components = new ArrayList<>();
+
     /**
      * Starts a new Builder object with messageComponent as the first object
      * {@link MessageComponent}
      *
      * @param messageComponent the message component that you would like to be first
      */
-    void construct(MessageComponent messageComponent) {
-
+    public MessageBuilder(MessageComponent messageComponent) {
+        components.add(messageComponent);
     }
 
     /**
@@ -23,15 +29,15 @@ public class MessageBuilder {
      *
      * @param message The message you would like to be included
      */
-    void construct(String message) {
-
+    public MessageBuilder(String message) {
+        components.add(new MessageComponent(message));
     }
 
     /**
      * Starts a new Builder object with another MessageBuilder as the object
      * The MessageBuilder is cloned into this MessageBuilder for modification
      */
-    void construct(MessageBuilder messageBuilder) {
+    public MessageBuilder(MessageBuilder messageBuilder) {
 
     }
 
@@ -40,7 +46,7 @@ public class MessageBuilder {
      *
      * @param messageComponent The message component you would like to append
      */
-    void append(MessageComponent messageComponent) {
+    public void append(MessageComponent messageComponent) {
 
     }
 
@@ -48,9 +54,11 @@ public class MessageBuilder {
      * Appends an array of message components onto
      *
      * @param messageComponents A list of message components you would like to append
+     * @return this MessageBuilder for chaining
      */
-    void append(MessageComponent[] messageComponents) {
+    public MessageBuilder append(MessageComponent[] messageComponents) {
 
+        return this;
     }
 
     /**
@@ -59,9 +67,11 @@ public class MessageBuilder {
      * Formatting codes are automatically parsed
      *
      * @param message The string message you would like to append
+     * @return this MessageBuilder for chaining
      */
-    void append(String message) {
+    public MessageBuilder append(String message) {
 
+        return this;
     }
 
     /**
@@ -70,9 +80,11 @@ public class MessageBuilder {
      * Formatting codes are automatically parsed
      *
      * @param messages The list of string messages you would like to append
+     * @return this MessageBuilder for chaining
      */
-    void append(String[] messages) {
+    public MessageBuilder append(String[] messages) {
 
+        return this;
     }
 
     /**
@@ -80,9 +92,11 @@ public class MessageBuilder {
      * Components within the message builder are appended
      *
      * @param messageBuilder a message builder that you would like to append
+     * @return this MessageBuilder for chaining
      */
-    void append(MessageBuilder messageBuilder) {
+    public MessageBuilder append(MessageBuilder messageBuilder) {
 
+        return this;
     }
 
     /**
@@ -91,8 +105,14 @@ public class MessageBuilder {
      * The builders are appended in order of the list.
      *
      * @param messageBuilders A list of message builders that you would like to append
+     * @return this MessageBuilder for chaining
      */
-    void append(MessageBuilder[] messageBuilders) {
+    public MessageBuilder append(MessageBuilder[] messageBuilders) {
 
+        return this;
+    }
+
+    public List<MessageComponent> getComponents() {
+        return this.components;
     }
 }

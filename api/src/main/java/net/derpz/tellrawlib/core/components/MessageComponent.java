@@ -1,15 +1,34 @@
 package net.derpz.tellrawlib.core.components;
 
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.derpz.tellrawlib.core.events.ClickEvent;
 import net.derpz.tellrawlib.core.events.HoverEvent;
+import net.derpz.tellrawlib.core.util.ChatUtil;
 
 /**
  * A component of a JSON Message that you wish to send to the player.
  * This version accepts a click event and a hover event.
  * @author xiurobert
  */
-public class MessageComponent extends MessageComponentPrimitive{
+public class MessageComponent extends MessageComponentPrimitive {
+
+    /**
+     * Constructs a blank message component
+     */
+    public MessageComponent() {
+        this.jsonObject = new JsonObject();
+    }
+
+    /**
+     * Constructs a new message component with a text portion.
+     * Accepts bukkit colour codes prefixed with an & sign
+     * @param text The text portion of the message component
+     */
+    public MessageComponent(String text) {
+        this.jsonObject = new JsonObject();
+        jsonObject.addProperty("text", ChatUtil.colour(text));
+    }
 
     /**
      * Sets the click event that will be called when the message component is clicked on
