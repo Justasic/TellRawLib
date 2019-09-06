@@ -16,11 +16,17 @@ public class MessageComponent extends MessageComponentPrimitive{
      * @param clickEvent A ClickEvent which will provide action
      */
     public void setClickEvent(ClickEvent clickEvent) {
+        removeClickEvent();
+        jsonObject.add("clickEvent", new JsonParser().parse(clickEvent.getJson()).getAsJsonObject());
+    }
+
+    /**
+     * Removes the click event
+     */
+    public void removeClickEvent() {
         if (jsonObject.has("clickEvent")) {
             jsonObject.remove("clickEvent");
         }
-
-        jsonObject.add("clickEvent", new JsonParser().parse(clickEvent.getJson()).getAsJsonObject());
     }
 
     /**
@@ -28,9 +34,16 @@ public class MessageComponent extends MessageComponentPrimitive{
      * @param hoverEvent A HoverEvent which will provide action
      */
     public void setHoverEvent(HoverEvent hoverEvent) {
+        removeHoverEvent();
+        jsonObject.add("hoverEvent", new JsonParser().parse(hoverEvent.getJson()).getAsJsonObject());
+    }
+
+    /**
+     * Removes the hover event
+     */
+    public void removeHoverEvent() {
         if (jsonObject.has("hoverEvent")) {
             jsonObject.remove("hoverEvent");
         }
-        jsonObject.add("hoverEvent", new JsonParser().parse(hoverEvent.getJson()).getAsJsonObject());
     }
 }

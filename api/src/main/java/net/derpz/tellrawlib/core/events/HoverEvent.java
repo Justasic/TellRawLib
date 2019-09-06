@@ -61,7 +61,9 @@ public class HoverEvent {
             JsonObject val = new JsonObject();
             val.addProperty("id", ((Entity) value).getUniqueId().toString());
             val.addProperty("type", "minecraft:" + ((Entity) value).getType().toString().toLowerCase());
-            val.addProperty("type", ((Entity) value).getCustomName());
+            val.addProperty("name", ((Entity) value).getCustomName());
+
+            hoverEvt.addProperty("value", new Gson().toJson(val));
         } else if (action == Action.SHOW_ITEM && value instanceof ItemStack) {
             // TODO: Reflection to get NBT into JSON
         } else {

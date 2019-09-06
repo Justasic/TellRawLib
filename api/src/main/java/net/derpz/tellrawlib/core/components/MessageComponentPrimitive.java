@@ -17,7 +17,6 @@ public class MessageComponentPrimitive {
         this.jsonObject = new JsonObject();
     }
 
-    // TODO: Methods to remove the stuff
     /**
      * Sets the text portion of the message component. Accepts bukkit colour codes prefixed with an & sign
      * You can supply as many color or formatting codes as you want.
@@ -40,10 +39,17 @@ public class MessageComponentPrimitive {
      * @param color A color of your choice
      */
     public void setColor(Color color) {
+        removeColor();
+        jsonObject.addProperty("color", color.toString().toLowerCase());
+    }
+
+    /**
+     * Removes the color of the component
+     */
+    public void removeColor() {
         if (jsonObject.has("color")) {
             jsonObject.remove("color");
         }
-        jsonObject.addProperty("color", color.toString().toLowerCase());
     }
 
     /**
@@ -57,6 +63,15 @@ public class MessageComponentPrimitive {
             jsonObject.addProperty(formatting.toString().toLowerCase(), true);
         }
     }
+    /**
+     * Removes formatting
+     * @param formatting The formatting to remove
+     */
+    public void removeFormatting(Formatting formatting) {
+        if (jsonObject.has(formatting.toString().toLowerCase())) {
+            jsonObject.remove(formatting.toString().toLowerCase());
+        }
+    }
 
     /**
      * Sets the insertion of the message component.
@@ -65,10 +80,17 @@ public class MessageComponentPrimitive {
      * @param insertion The text to be inserted in the target's chat
      */
     public void setInsertion(String insertion) {
+        removeInsertion();
+        jsonObject.addProperty("insertion", insertion);
+    }
+
+    /**
+     * Removes the insertion
+     */
+    public void removeInsertion() {
         if (jsonObject.has("insertion")) {
             jsonObject.remove("insertion");
         }
-        jsonObject.addProperty("insertion", insertion);
     }
 
     /**
