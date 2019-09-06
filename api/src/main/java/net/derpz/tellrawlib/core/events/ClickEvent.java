@@ -24,7 +24,6 @@ public class ClickEvent {
         OPEN_URL,
         /**
          * Change the page of the book, in a written book
-         * @deprecated You really shouldn't be using this. It is a message plugin
          */
         CHANGE_PAGE
     }
