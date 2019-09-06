@@ -9,16 +9,17 @@ import net.derpz.tellrawlib.core.components.MessageComponentPrimitive;
 import net.derpz.tellrawlib.core.util.ItemStackJsonNbtConverter;
 import org.bukkit.entity.Entity;
 import org.bukkit.inventory.ItemStack;
-
-import java.lang.reflect.InvocationTargetException;
+import org.bukkit.plugin.Plugin;
 
 /**
  * Represents an action that will be executed when the user hovers over the JSON message
+ * {@see <a href="https://wiki.vg/Chat#Shared_between_all_components">wiki.vg on Chat</a>}
  */
 public class HoverEvent {
 
     /**
      * A list of actions that can be performed when the user hovers over the JSON message
+     * @deprecated Left here for documentation.
      */
     enum Action {
         /**
@@ -44,38 +45,53 @@ public class HoverEvent {
     private JsonObject hoverEvt;
 
     /**
-     * Constructs a new HoverEvent with an action and a value
-     * @param action The action you would like to execute
-     * @param value The value that you supply to have the action executed
-     * @throws ValueException If your value does not correspond with your action
+     * Directly constructs a HoverEvent that shows text
+     * @param value The primitive message component that you would like to be shown
      */
-    
-    public HoverEvent(Action action, Object value) throws ValueException {
+    public HoverEvent(MessageComponentPrimitive value) {
         hoverEvt = new JsonObject();
 
-        hoverEvt.addProperty("action", action.toString().toLowerCase());
-        if (action == Action.SHOW_TEXT && value instanceof MessageComponentPrimitive) {
-            JsonObject val = new JsonObject();
-            JsonArray jsonArray = new JsonArray();
+        // processing
+        JsonObject val = new JsonObject();
+        JsonArray jsonArray = new JsonArray();
 
-            jsonArray.add(new JsonParser().parse(((MessageComponentPrimitive) value).getJsonString()).getAsJsonObject());
-            val.addProperty("text", "");
-            val.add("extra", jsonArray);
+        jsonArray.add(new JsonParser().parse(value.getJsonString()).getAsJsonObject());
 
-            hoverEvt.add("value", val);
-        } else if (action == Action.SHOW_ENTITY && value instanceof Entity) {
-            JsonObject val = new JsonObject();
-            val.addProperty("id", ((Entity) value).getUniqueId().toString());
-            val.addProperty("type", "minecraft:" + ((Entity) value).getType().toString().toLowerCase());
-            val.addProperty("name", ((Entity) value).getCustomName());
+        val.addProperty("text", "");
+        val.add("extra", jsonArray);
 
-            hoverEvt.addProperty("value", new Gson().toJson(val));
-        } else if (action == Action.SHOW_ITEM && value instanceof ItemStack) {
-            // TODO: Figure out a way to call this when you're actually in the server
-            //hoverEvt.addProperty("value");
-        } else {
-            throw new ValueException("Value is invalid for the type of action you wish to perform");
-        }
+        hoverEvt.addProperty("action", "show_text");
+        hoverEvt.add("value", val);
+    }
+
+    /**
+     * Directly constructs a HoverEvent that shows an entity
+     * @param value The Entity that you would like to be shown
+     */
+    public HoverEvent(Entity value) {
+        hoverEvt = new JsonObject();
+
+        // processing
+        JsonObject val = new JsonObject();
+
+        val.addProperty("id", ((Entity) value).getUniqueId().toString());
+        val.addProperty("type", "minecraft:" + ((Entity) value).getType().toString().toLowerCase());
+        val.addProperty("name", ((Entity) value).getCustomName());
+
+        hoverEvt.addProperty("action", "show_entity");
+        hoverEvt.addProperty("value", new Gson().toJson(val));
+    }
+
+    /**
+     * Directly constructs a HoverEvent that shows an item (ItemStack)
+     * @param value The ItemStack that you would like to be shown
+     * @param plugin The plugin. Used to get the version of the server
+     */
+    public HoverEvent(ItemStack value, Plugin plugin) {
+        hoverEvt = new JsonObject();
+
+        hoverEvt.addProperty("action", "show_item");
+        hoverEvt.addProperty("value", new ItemStackJsonNbtConverter(value, plugin).getNbtJson());
     }
 
     /**
