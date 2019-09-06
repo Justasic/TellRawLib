@@ -3,6 +3,7 @@ package net.derpz.tellrawlib.core;
 import net.derpz.tellrawlib.core.components.MessageComponent;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -38,16 +39,17 @@ public class MessageBuilder {
      * The MessageBuilder is cloned into this MessageBuilder for modification
      */
     public MessageBuilder(MessageBuilder messageBuilder) {
-
+        this.components = messageBuilder.getComponents();
     }
 
     /**
      * Appends a message component onto the builder
-     *
      * @param messageComponent The message component you would like to append
+     * @return this MessageBuilder for chaining
      */
-    public void append(MessageComponent messageComponent) {
-
+    public MessageBuilder append(MessageComponent messageComponent) {
+        this.components.add(messageComponent);
+        return this;
     }
 
     /**
@@ -57,7 +59,7 @@ public class MessageBuilder {
      * @return this MessageBuilder for chaining
      */
     public MessageBuilder append(MessageComponent[] messageComponents) {
-
+        this.components.addAll(Arrays.asList(messageComponents));
         return this;
     }
 
@@ -70,7 +72,7 @@ public class MessageBuilder {
      * @return this MessageBuilder for chaining
      */
     public MessageBuilder append(String message) {
-
+        this.components.add(new MessageComponent(message));
         return this;
     }
 
@@ -83,7 +85,9 @@ public class MessageBuilder {
      * @return this MessageBuilder for chaining
      */
     public MessageBuilder append(String[] messages) {
-
+        for (String msg : messages) {
+            this.components.add(new MessageComponent(msg));
+        }
         return this;
     }
 
@@ -95,7 +99,7 @@ public class MessageBuilder {
      * @return this MessageBuilder for chaining
      */
     public MessageBuilder append(MessageBuilder messageBuilder) {
-
+        this.components.addAll(messageBuilder.getComponents());
         return this;
     }
 
@@ -108,7 +112,9 @@ public class MessageBuilder {
      * @return this MessageBuilder for chaining
      */
     public MessageBuilder append(MessageBuilder[] messageBuilders) {
-
+        for (MessageBuilder builder: messageBuilders) {
+            this.components.addAll(builder.getComponents());
+        }
         return this;
     }
 
