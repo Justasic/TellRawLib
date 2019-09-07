@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api" />
         <module name="versionsupport" />
+        <module name="v1_9_R1" />
+        <module name="v1_9_R2" />
       </profile>
       <profile name="Annotation profile for TellrawLib" enabled="true">
         <sourceOutputDir name="../target/generated-sources/annotations" />

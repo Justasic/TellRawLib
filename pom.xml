@@ -12,6 +12,8 @@
         <module>api</module>
         <module>plugin</module>
         <module>versionsupport</module>
+        <module>v1_9_R1</module>
+        <module>v1_9_R2</module>
     </modules>
 
     <properties>
