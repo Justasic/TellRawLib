@@ -31,7 +31,7 @@
         -->
 
         <repository>
-            <id>infiniapress-nexus</id>
+            <id>infiniapress-public</id>
             <url>https://dev.infiniapress.co/nexus/repository/maven-public/</url>
         </repository>
 
