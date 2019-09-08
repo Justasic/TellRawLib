@@ -1,5 +1,8 @@
 package net.derpz.tellrawlib;
 
+import net.derpz.tellrawlib.nms.JSONPacketMsgv1_9_R1;
+import net.derpz.tellrawlib.nms.JSONPacketMsgv1_9_R2;
+import org.bukkit.Bukkit;
 import org.bukkit.Server;
 import org.bukkit.plugin.Plugin;
 
@@ -8,9 +11,9 @@ import java.util.List;
 
 public class VersionSupportHandler {
 
-    private String version;
-    private NMSJsonPacketMsg nmsJsonPacketMsg;
-    private List<String> supportedVersions = new ArrayList<String>(){{
+    private static String version;
+    private static NMSJsonPacketMsg nmsJsonPacketMsg;
+    private static List<String> supportedVersions = new ArrayList<String>(){{
         add("v1_9_R1");
         add("v1_9_R2");
         add("v1_10_R1");
@@ -21,36 +24,31 @@ public class VersionSupportHandler {
         add("v1_14_R1");
     }};
 
-    /**
-     * Construct the support handler
-     * @param server Server returned from getServer()
-     */
-    public VersionSupportHandler(Server server) {
+
+    public static List<String> getSupportedVersions() {
+        return supportedVersions;
+    }
+
+    public static NMSJsonPacketMsg getNmsJsonPacketMsg() {
         try {
-            version = server.getClass()
+            version = Bukkit.getServer().getClass()
                     .getPackage().getName()
                     .replace(".", ",").split(",")[3];
         } catch (ArrayIndexOutOfBoundsException ignored) {
             // impossible
         }
-    }
-
-    private boolean checkIfVersionSupported() {
-        return supportedVersions.contains(version);
-    }
-
-    public List<String> getSupportedVersions() {
-        return supportedVersions;
-    }
-
-    public NMSJsonPacketMsg getNmsJsonPacketMsg() {
-        if (!checkIfVersionSupported()) {
+        if (!supportedVersions.contains(version)) {
             // Cannot support version
+            Bukkit.getServer().getLogger().severe("TellrawLib <API>: This version is not supported!");
             return null;
         }
 
         switch(version) {
             // TODO: Add in version handling
+            case "v1_9_R1":
+                return new JSONPacketMsgv1_9_R1();
+            case "v1_9_R2":
+                return new JSONPacketMsgv1_9_R2();
         }
         return null;
     }
