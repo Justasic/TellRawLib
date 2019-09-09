@@ -15,37 +15,9 @@ write any NMS
 ### Building
 Only the API:
 `mvn install -pl plugin`
+
 Only the plugin:
 `mvn package -pl plugin`
 
-### Using this library
-
-#### Maven
-Include my repository
-```xml
-<repository>
-    <id>xiurobert-snapshots</id>
-    <url>https://dev.derpz.tk/nexus/repository/maven-snapshots/</url>
-</repository>
-```
-Add the dependency
-```xml
-<dependency>
-  <groupId>net.derpz.tellrawlib</groupId>
-  <artifactId>api</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-</dependency>
-```
-
-#### Gradle
-Include my repository
-```groovy
-maven {
-    url = "https://dev.derpz.tk/nexus/repository/maven-snapshots/"
-}
-```
-
-Add the dependency
-```groovy
-implementation 'net.derpz.tellrawlib:api:1.0.0-SNAPSHOT'
-```
+Everything:
+`mvn package`
