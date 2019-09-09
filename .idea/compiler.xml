@@ -28,6 +28,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="v1_13_R1" target="8" />
       <module name="version" target="1.5" />
     </bytecodeTargetLevel>
   </component>

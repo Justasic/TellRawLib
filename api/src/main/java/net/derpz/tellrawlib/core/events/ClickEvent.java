@@ -8,7 +8,7 @@ public class ClickEvent {
     /**
      * A list of actions that can be performed when the user clicks on the message
      */
-    enum Action {
+    public enum Action {
         /**
          * Runs a command as the user
          */

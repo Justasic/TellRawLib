@@ -20,7 +20,7 @@ public class HoverEvent {
      * A list of actions that can be performed when the user hovers over the JSON message
      * @deprecated Left here for documentation.
      */
-    enum Action {
+    public enum Action {
         /**
          * Shows a {@link net.derpz.tellrawlib.core.components.MessageComponentPrimitive}
          */
@@ -35,7 +35,6 @@ public class HoverEvent {
         SHOW_ENTITY,
         /**
          * Shows an {@link org.bukkit.Achievement}
-         * or an {@link org.bukkit.advancement.Advancement}
          * @deprecated In 1.12+, advancements are text
          */
         SHOW_ACHIEVEMENT

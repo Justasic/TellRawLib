@@ -7,10 +7,9 @@ import org.bukkit.Bukkit;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VersionSupportHandler {
+class VersionSupportHandler {
 
     private static String version;
-    private static NMSJsonPacketMsg nmsJsonPacketMsg;
     private static List<String> supportedVersions = new ArrayList<String>(){{
         add("v1_8_R1");
         add("v1_8_R2");
@@ -26,11 +25,7 @@ public class VersionSupportHandler {
     }};
 
 
-    public static List<String> getSupportedVersions() {
-        return supportedVersions;
-    }
-
-    public static NMSJsonPacketMsg getNmsJsonPacketMsg() throws VersionUnsupportedException {
+    static NMSJsonPacketMsg getNmsJsonPacketMsg() throws VersionUnsupportedException {
         try {
             version = Bukkit.getServer().getClass()
                     .getPackage().getName()
