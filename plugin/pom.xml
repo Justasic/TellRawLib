@@ -49,6 +49,13 @@
                         <goals>
                             <goal>shade</goal>
                         </goals>
+                        <configuration>
+                            <artifactSet>
+                                <includes>
+                                    <include>net.derpz.tellrawlib:api</include>
+                                </includes>
+                            </artifactSet>
+                        </configuration>
                     </execution>
 
                 </executions>

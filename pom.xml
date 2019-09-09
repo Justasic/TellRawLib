@@ -68,4 +68,17 @@
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>infiniapress-nexus</id>
+            <name>InfiniaPress Releases</name>
+            <url>https://dev.derpz.tk/nexus/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>infiniapress-nexus</id>
+            <name>InfiniaPress Snapshots</name>
+            <url>https://dev.derpz.tk/nexus/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
