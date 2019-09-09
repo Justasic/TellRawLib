@@ -8,7 +8,6 @@ import net.derpz.tellrawlib.core.enums.Color;
 import net.derpz.tellrawlib.core.enums.Formatting;
 import net.derpz.tellrawlib.core.events.ClickEvent;
 import net.derpz.tellrawlib.core.events.HoverEvent;
-import net.derpz.tellrawlib.core.util.ChatUtil;
 import net.derpz.tellrawlib.exceptions.VersionUnsupportedException;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
