@@ -20,7 +20,15 @@ Only the plugin:
 
 ### Using this library
 
-Maven
+#### Maven
+Include my repository
+```xml
+<repository>
+    <id>xiurobert-snapshots</id>
+    <url>https://dev.derpz.tk/nexus/repository/maven-snapshots/</url>
+</repository>
+```
+Add the dependency
 ```xml
 <dependency>
   <groupId>net.derpz.tellrawlib</groupId>
@@ -29,7 +37,15 @@ Maven
 </dependency>
 ```
 
-Gradle
+#### Gradle
+Include my repository
+```groovy
+maven {
+    url = "https://dev.derpz.tk/nexus/repository/maven-snapshots/"
+}
+```
+
+Add the dependency
 ```groovy
 implementation 'net.derpz.tellrawlib:api:1.0.0-SNAPSHOT'
 ```
