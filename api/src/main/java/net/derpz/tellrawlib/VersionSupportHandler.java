@@ -1,9 +1,8 @@
 package net.derpz.tellrawlib;
 
+import net.derpz.tellrawlib.exceptions.VersionUnsupportedException;
 import net.derpz.tellrawlib.nms.*;
 import org.bukkit.Bukkit;
-import org.bukkit.Server;
-import org.bukkit.plugin.Plugin;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,6 +60,13 @@ public class VersionSupportHandler {
                 return new JSONPacketMsgv1_11_R1();
             case "v1_12_R1":
                 return new JSONPacketMsgv1_12_R1();
+            case "v1_13_R1":
+                // TODO: Add v1_13_R1
+                return null;
+            case "v1_13_R2":
+                return new JSONPacketMsgv1_13_R2();
+            case "v1_14_R1":
+                return new JSONPacketMsgv1_14_R1();
             default:
                 // Should never be reached, but is a good safety net
                 throw new VersionUnsupportedException("Current NMS version '" + version + "' is unsupported.");

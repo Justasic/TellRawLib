@@ -1,4 +1,4 @@
-package net.derpz.tellrawlib;
+package net.derpz.tellrawlib.exceptions;
 
 public class VersionUnsupportedException extends Exception {
 
