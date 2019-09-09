@@ -20,7 +20,7 @@ public class ChatUtil {
     }
 
     /**
-     * Translate alternate colour code "&".
+     * Translate alternate colour code "&amp;".
      * I wrote this because the bukkit function is way too long
      * @param input Input containing alternate colour codes
      * @return Translated output containing coloured strings

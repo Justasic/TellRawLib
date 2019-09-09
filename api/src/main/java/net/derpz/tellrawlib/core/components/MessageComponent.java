@@ -22,7 +22,7 @@ public class MessageComponent extends MessageComponentPrimitive {
 
     /**
      * Constructs a new message component with a text portion.
-     * Accepts bukkit colour codes prefixed with an & sign
+     * Accepts bukkit colour codes prefixed with an &amp; sign
      * @param text The text portion of the message component
      */
     public MessageComponent(String text) {

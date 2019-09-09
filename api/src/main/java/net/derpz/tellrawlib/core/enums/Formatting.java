@@ -6,27 +6,27 @@ package net.derpz.tellrawlib.core.enums;
  */
 public enum Formatting {
     /**
-     * Represents the &l Bukkit chat color notation
+     * Represents the &amp;l Bukkit chat color notation
      */
     BOLD,
     /**
-     * Represents the &o Bukkit chat color notation
+     * Represents the &amp;o Bukkit chat color notation
      */
     ITALIC,
     /**
-     * Represents the &m Bukkit chat color notation
+     * Represents the &amp;m Bukkit chat color notation
      */
     STRIKETHROUGH,
     /**
-     * Represents the &n Bukkit chat color notation
+     * Represents the &amp;n Bukkit chat color notation
      */
     UNDERLINED,
     /**
-     * Represents the &r Bukkit chat color notation
+     * Represents the &amp;r Bukkit chat color notation
      */
     RESET,
     /**
-     * Represents the &k Bukkit chat color notation
+     * Represents the &amp;k Bukkit chat color notation
      */
     OBFUSCATED
 }

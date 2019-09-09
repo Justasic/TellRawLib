@@ -22,7 +22,7 @@ public class MessageComponentPrimitive {
 
     /**
      * Constructs a new primitive message component with a text portion.
-     * Accepts bukkit colour codes prefixed with an & sign
+     * Accepts bukkit colour codes prefixed with an &amp; sign
      * @param text The text portion of the message component
      */
     public MessageComponentPrimitive(String text) {
@@ -32,7 +32,7 @@ public class MessageComponentPrimitive {
 
     /**
      * Sets the text portion of the message component.
-     * Accepts bukkit colour codes prefixed with an & sign
+     * Accepts bukkit colour codes prefixed with an &amp; sign
      * @param text The text portion of the message component
      */
     public void setText(String text) {

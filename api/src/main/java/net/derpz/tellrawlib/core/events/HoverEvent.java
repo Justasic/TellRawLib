@@ -12,7 +12,7 @@ import org.bukkit.plugin.Plugin;
 
 /**
  * Represents an action that will be executed when the user hovers over the JSON message
- * {@see <a href="https://wiki.vg/Chat#Shared_between_all_components">wiki.vg on Chat</a>}
+ * <a href="https://wiki.vg/Chat#Shared_between_all_components">wiki.vg on Chat</a>
  */
 public class HoverEvent {
 
@@ -94,8 +94,9 @@ public class HoverEvent {
 
     /**
      * Returns the JSON object as a string
+     * For internal use only
      * @return The JSON string
-     * @apiNote For internal use only
+     *
      */
     public String getJson() {
         return new Gson().toJson(hoverEvt);

@@ -37,6 +37,7 @@ public class MessageBuilder {
     /**
      * Starts a new Builder object with another MessageBuilder as the object
      * The MessageBuilder is cloned into this MessageBuilder for modification
+     * @param messageBuilder The message builder to be cloned
      */
     public MessageBuilder(MessageBuilder messageBuilder) {
         this.components = messageBuilder.getComponents();
