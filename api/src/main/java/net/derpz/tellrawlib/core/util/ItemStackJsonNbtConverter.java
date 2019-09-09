@@ -1,11 +1,8 @@
 package net.derpz.tellrawlib.core.util;
 
-import com.sun.org.apache.bcel.internal.generic.FieldGenOrMethodGen;
-import org.bukkit.plugin.Plugin;
-import org.bukkit.Server;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.Plugin;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 

@@ -10,4 +10,11 @@ public interface NMSJsonPacketMsg {
      * @param m JSON string which will be used as the message
      */
     public void sendMsg(Player p, String m);
+
+    /**
+     * Broadcasts a JSON message
+     * You should not be accessing this directly
+     * @param m JSON string which will be used as the message
+     */
+    public void broadcast(String m);
 }

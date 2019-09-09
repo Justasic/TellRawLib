@@ -1,7 +1,6 @@
 package net.derpz.tellrawlib;
 
-import net.derpz.tellrawlib.nms.JSONPacketMsgv1_9_R1;
-import net.derpz.tellrawlib.nms.JSONPacketMsgv1_9_R2;
+import net.derpz.tellrawlib.nms.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
 import org.bukkit.plugin.Plugin;
@@ -49,8 +48,16 @@ public class VersionSupportHandler {
                 return new JSONPacketMsgv1_9_R1();
             case "v1_9_R2":
                 return new JSONPacketMsgv1_9_R2();
+            case "v1_10_R1":
+                return new JSONPacketMsgv1_10_R1();
+            case "v1_11_R1":
+                return new JSONPacketMsgv1_11_R1();
+            case "v1_12_R1":
+                return new JSONPacketMsgv1_12_R1();
         }
         return null;
     }
+
+
 
 }
