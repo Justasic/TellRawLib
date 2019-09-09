@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import net.derpz.tellrawlib.core.ValueException;
 import net.derpz.tellrawlib.core.components.MessageComponentPrimitive;
 import net.derpz.tellrawlib.core.util.ItemStackJsonNbtConverter;
 import org.bukkit.entity.Entity;

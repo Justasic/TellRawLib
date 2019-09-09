@@ -1,4 +1,4 @@
-package net.derpz.tellrawlib.core;
+package net.derpz.tellrawlib.core.exceptions;
 
 /**
  * Created by xiurobert on 06-Sep-19.

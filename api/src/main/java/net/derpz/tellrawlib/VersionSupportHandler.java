@@ -13,6 +13,9 @@ public class VersionSupportHandler {
     private static String version;
     private static NMSJsonPacketMsg nmsJsonPacketMsg;
     private static List<String> supportedVersions = new ArrayList<String>(){{
+        add("v1_8_R1");
+        add("v1_8_R2");
+        add("v1_8_R3");
         add("v1_9_R1");
         add("v1_9_R2");
         add("v1_10_R1");
@@ -28,22 +31,26 @@ public class VersionSupportHandler {
         return supportedVersions;
     }
 
-    public static NMSJsonPacketMsg getNmsJsonPacketMsg() {
+    public static NMSJsonPacketMsg getNmsJsonPacketMsg() throws VersionUnsupportedException {
         try {
             version = Bukkit.getServer().getClass()
                     .getPackage().getName()
                     .replace(".", ",").split(",")[3];
         } catch (ArrayIndexOutOfBoundsException ignored) {
-            // impossible
+
         }
         if (!supportedVersions.contains(version)) {
-            // Cannot support version
             Bukkit.getServer().getLogger().severe("TellrawLib <API>: This version is not supported!");
-            return null;
+            throw new VersionUnsupportedException("Current NMS version '" + version + "' is unsupported.");
         }
 
         switch(version) {
-            // TODO: Add in version handling
+            case "v1_8_R1":
+                return new JSONPacketMsgv1_8_R1();
+            case "v1_8_R2":
+                return new JSONPacketMsgv1_8_R2();
+            case "v1_8_R3":
+                return new JSONPacketMsgv1_8_R3();
             case "v1_9_R1":
                 return new JSONPacketMsgv1_9_R1();
             case "v1_9_R2":
@@ -54,8 +61,10 @@ public class VersionSupportHandler {
                 return new JSONPacketMsgv1_11_R1();
             case "v1_12_R1":
                 return new JSONPacketMsgv1_12_R1();
+            default:
+                // Should never be reached, but is a good safety net
+                throw new VersionUnsupportedException("Current NMS version '" + version + "' is unsupported.");
         }
-        return null;
     }
 
 
