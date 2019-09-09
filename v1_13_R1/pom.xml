@@ -19,8 +19,6 @@
             <version>${pluginVersion}</version>
         </dependency>
 
-        <!-- TODO -->
-        <!-- Waiting for JAR to be generated and uploaded -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
