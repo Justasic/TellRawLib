@@ -12,12 +12,15 @@
         <module>api</module>
         <module>plugin</module>
         <module>versionsupport</module>
+        <!-- TODO: Support for up to v1_8_R1 -->
+        <module>v1_8_R3</module>
         <module>v1_9_R1</module>
         <module>v1_9_R2</module>
         <module>v1_10_R1</module>
         <module>v1_11_R1</module>
         <module>v1_12_R1</module>
-        <module>v1_8_R3</module>
+        <!-- TODO: Support for up to latest v1_14_R1-->
+
     </modules>
 
     <properties>
