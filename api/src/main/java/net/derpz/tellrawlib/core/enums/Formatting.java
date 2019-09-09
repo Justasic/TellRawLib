@@ -20,7 +20,7 @@ public enum Formatting {
     /**
      * Represents the &n Bukkit chat color notation
      */
-    UNDERLINE,
+    UNDERLINED,
     /**
      * Represents the &r Bukkit chat color notation
      */

@@ -49,6 +49,7 @@ public class MessageComponentPrimitive {
      * <b>Note that you can always set the color with bukkit color codes in {@link #setText(String)}</b>
      * <b>You may only choose one color code for the whole MessageComponent.</b>
      * <p>If you wish to use more color codes, please use {@link #setText(String)} instead</p>
+     * <b>WARNING: Any colour/formatting codes specified within the text portion will override this!</b>
      * @param color A color of your choice
      */
     public void setColor(Color color) {
@@ -69,6 +70,7 @@ public class MessageComponentPrimitive {
      * Adds formatting to the text portion of the message component
      * For formatting codes, see {@link net.derpz.tellrawlib.core.enums.Formatting}
      * <b>Note that you can always set the color with bukkit color codes in {@link #setText(String)}</b>
+     * <b>WARNING: ANY formatting codes specified within the text portion will override this!</b>
      * @param formatting A formatting code of your choice.
      */
     public void addFormatting(Formatting formatting) {

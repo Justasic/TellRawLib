@@ -1,6 +1,7 @@
 package net.derpz.tellrawlib.nms;
 
 import net.derpz.tellrawlib.NMSJsonPacketMsg;
+import net.minecraft.server.v1_14_R1.ChatMessageType;
 import net.minecraft.server.v1_14_R1.IChatBaseComponent;
 import net.minecraft.server.v1_14_R1.PacketPlayOutChat;
 import org.bukkit.Bukkit;
