@@ -6,7 +6,8 @@ import net.derpz.tellrawlib.exceptions.VersionUnsupportedException;
 import org.bukkit.entity.Player;
 
 /**
- * Created by xiurobert on 03-Sep-19.
+ * The main API object
+ * Used to send messages
  */
 public class TellrawlibAPI {
 

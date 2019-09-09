@@ -31,8 +31,8 @@ public class MessageComponentPrimitive {
     }
 
     /**
-     * Sets the text portion of the message component.
-     * Accepts bukkit colour codes prefixed with an &amp; sign
+     * Sets the text portion of the message component. <br>
+     * Accepts bukkit colour codes prefixed with an &amp; sign<br>
      * @param text The text portion of the message component
      */
     public void setText(String text) {
@@ -44,11 +44,11 @@ public class MessageComponentPrimitive {
 
 
     /**
-     * Sets the colour of the text portion of the message component.
-     * For chat colors, see {@link net.derpz.tellrawlib.core.enums.Color}
-     * <b>Note that you can always set the color with bukkit color codes in {@link #setText(String)}</b>
-     * <b>You may only choose one color code for the whole MessageComponent.</b>
-     * <p>If you wish to use more color codes, please use {@link #setText(String)} instead</p>
+     * Sets the colour of the text portion of the message component.<br>
+     * For chat colors, see {@link net.derpz.tellrawlib.core.enums.Color}<br>
+     * <b>Note that you can always set the color with bukkit color codes in {@link #setText(String)}</b><br>
+     * <b>You may only choose one color code for the whole MessageComponent.</b><br>
+     * <p>If you wish to use more color codes, please use {@link #setText(String)} instead</p><br>
      * <b>WARNING: Any colour/formatting codes specified within the text portion will override this!</b>
      * @param color A color of your choice
      */
@@ -67,9 +67,9 @@ public class MessageComponentPrimitive {
     }
 
     /**
-     * Adds formatting to the text portion of the message component
-     * For formatting codes, see {@link net.derpz.tellrawlib.core.enums.Formatting}
-     * <b>Note that you can always set the color with bukkit color codes in {@link #setText(String)}</b>
+     * Adds formatting to the text portion of the message component<br>
+     * For formatting codes, see {@link net.derpz.tellrawlib.core.enums.Formatting}<br>
+     * <b>Note that you can always set the color with bukkit color codes in {@link #setText(String)}</b><br>
      * <b>WARNING: ANY formatting codes specified within the text portion will override this!</b>
      * @param formatting A formatting code of your choice.
      */
@@ -89,8 +89,8 @@ public class MessageComponentPrimitive {
     }
 
     /**
-     * Sets the insertion of the message component.
-     * The text specified in the insertion will be inserted
+     * Sets the insertion of the message component.<br>
+     * The text specified in the insertion will be inserted<br>
      * into the player's chat when they shift-click on the text
      * @param insertion The text to be inserted in the target's chat
      */

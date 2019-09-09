@@ -24,7 +24,7 @@ public class MessageBuilder {
     }
 
     /**
-     * Starts a new Builder object with a String as the first object
+     * Starts a new Builder object with a String as the first object <br>
      * The string is automatically converted into a MessageComponent and
      * will have its colour and formatting codes parsed automatically
      *
@@ -35,7 +35,7 @@ public class MessageBuilder {
     }
 
     /**
-     * Starts a new Builder object with another MessageBuilder as the object
+     * Starts a new Builder object with another MessageBuilder as the object <br>
      * The MessageBuilder is cloned into this MessageBuilder for modification
      * @param messageBuilder The message builder to be cloned
      */
@@ -54,7 +54,7 @@ public class MessageBuilder {
     }
 
     /**
-     * Appends an array of message components onto
+     * Appends an array of message components onto this
      *
      * @param messageComponents A list of message components you would like to append
      * @return this MessageBuilder for chaining
@@ -65,8 +65,8 @@ public class MessageBuilder {
     }
 
     /**
-     * Append a list of string messages onto the message builder.
-     * The message gets converted into a MessageComponent.
+     * Append a list of string messages onto the message builder. <br>
+     * The message gets converted into a MessageComponent. <br>
      * Formatting codes are automatically parsed
      *
      * @param message The string message you would like to append
@@ -78,8 +78,8 @@ public class MessageBuilder {
     }
 
     /**
-     * Appends a list of string messages onto the message builder
-     * Each of the messages get converted into a MessageComponent.
+     * Appends a list of string messages onto the message builder <br>
+     * Each of the messages get converted into a MessageComponent. <br>
      * Formatting codes are automatically parsed
      *
      * @param messages The list of string messages you would like to append
@@ -93,8 +93,8 @@ public class MessageBuilder {
     }
 
     /**
-     * Appends a message builder onto the message builder.
-     * Components within the message builder are appended
+     * Appends a message builder onto the message builder. <br>
+     * Components within the message builder are appended <br>
      *
      * @param messageBuilder a message builder that you would like to append
      * @return this MessageBuilder for chaining
@@ -105,8 +105,8 @@ public class MessageBuilder {
     }
 
     /**
-     * Appends a list of message builders onto the message builder.
-     * Components within each of the message builders are appended.
+     * Appends a list of message builders onto the message builder. <br>
+     * Components within each of the message builders are appended. <br>
      * The builders are appended in order of the list.
      *
      * @param messageBuilders A list of message builders that you would like to append
