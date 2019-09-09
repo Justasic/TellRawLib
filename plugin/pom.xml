@@ -28,7 +28,7 @@
 
     <build>
         <directory>../target</directory>
-        <defaultGoal>clean install</defaultGoal>
+        <defaultGoal>clean package</defaultGoal>
         <finalName>Tellrawlib-spigot-${pluginVersion}</finalName>
 
         <resources>
@@ -55,9 +55,9 @@
                                     <include>net.derpz.tellrawlib:api</include>
                                 </includes>
                             </artifactSet>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
                         </configuration>
                     </execution>
-
                 </executions>
 
             </plugin>

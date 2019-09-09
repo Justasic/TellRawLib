@@ -9,6 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <properties>
+        <maven.deploy.skip>false</maven.deploy.skip>
+    </properties>
+
     <artifactId>api</artifactId>
 
     <dependencies>
@@ -106,11 +110,22 @@
                         </goals>
 
                         <configuration>
+
+                            <relocations>
+                                <relocation>
+                                    <pattern>com.google.gson</pattern>
+                                    <shadedPattern>net.derpz.tellrawlib.lib.gson</shadedPattern>
+                                </relocation>
+                            </relocations>
+
                             <artifactSet>
                                 <includes>
-                                    <include>net.derpz.tellrawlib:v1*</include>
+                                    <include>net.derpz.tellrawlib:v1_*</include>
+                                    <include>net.derpz.tellrawlib:versionsupport</include>
+                                    <include>com.google.code.gson:gson</include>
                                 </includes>
                             </artifactSet>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
                         </configuration>
 
                     </execution>
